@@ -1,0 +1,89 @@
+@model TheatreCMS3.Areas.Prod.Models.ProdPhoto
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/Areas/Prod.css">
+</head>
+<body>
+    <div class="ProdPhotos-Create-Card">
+        <!-- Controller function, Controller, Post-->
+        @using (Html.BeginForm("Create", "ProdPhotos", FormMethod.Post, new { enctype="multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <center>
+                    <h2 class="ProdPhotos-Create-Title">Create Production Photo Entry</h2> <!-- Add a header in the form with the following text "Create Production Photo". -->
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Production, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Production, new { htmlAttributes = new { placeholder = "Please Enter the Production Name", @class = "form-control" } }) <!--Add placeholders to all input fields. -->
+                            @Html.ValidationMessageFor(model => model.Production, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { placeholder = "Please add a Title", @class = "form-control" } }) <!--Add placeholders to all input fields. -->
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { placeholder = "Please add a Description", @class = "form-control" } }) <!--Add placeholders to all input fields. -->
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </center>
+
+                <div class="ProdPhotos-Create-Buttons-Center">
+                    <!-- Style the Submit and Back to List buttons (background color, rounded corners, subtle hover effect, etc.).  There should be a color distinction between these two buttons and they should both be centered on the page. -->
+                    <input type="submit" value="Create" class="btn ProdPhotos-Create-Buttons">
+                    <div class="btn ProdPhotos-Create-BackButtons">
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                </div>
+
+
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="ProdPhotos-Create-ImagePlaceholder">
+                    <center>
+                        <input type="file" id="uploadImage" name="postedFile" onchange="PreviewImage();" required />
+                        <div>
+                            <img id="viewImage" src="https://unsplash.it/600/400"/>
+                        </div>
+                    </center>
+                </div>
+            </div>
+            </div>
+        }
+    </div>
+</body>
+
+<script type="text/javascript">
+
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("viewImage").src = oFREvent.target.result;
+        };
+    };
+
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

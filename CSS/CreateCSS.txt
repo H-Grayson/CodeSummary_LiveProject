@@ -1,0 +1,35 @@
+/* Create page Styling*/
+.CastMembers-Create-Form {
+    background-color: var(--secondary-color);
+    border-radius: 1em;
+    padding-bottom: 5em;
+    padding-top: 5em;
+ 
+}
+.CastMembers-Create-Title {
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 28px;
+    color: var(--light-color);
+}
+
+.CastMembers-Create-Group {
+    padding-left: 160px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.CastMembers-Create-InputBox:focus {
+    box-shadow: none;
+    border: 2px solid var(--secondary-color);
+}
+
+.CastMembers-Create-Statement{
+    padding-left: 175px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.CastMembers-Create-FileUpload {
+    padding-left: 160px;
+    padding-bottom: 20px;

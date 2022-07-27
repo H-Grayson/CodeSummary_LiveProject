@@ -1,0 +1,90 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+<!-- Bootstrap / Oswald font / Css Doc-->
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+</head>
+
+<body>
+    <div class="Home-Index-Image">
+        <img class="Home-Index-LogoImg" src="~/Content/images/TheatreLogo.png" alt="Theatre Logo" /> <!-- Logo for theatre-->
+    </div>
+
+    <div class="container"> 
+        <div class="row">
+            <div class="col-sm-9">
+                <!-- Left Column has Spotlight / Land Acknowledgment text  -->
+                <center>
+                    <h2 class="Home-Index-SpotlightText" style="font-family:Oswald">SPOTLIGHT</h2>
+                </center>
+                <!-- Upcoming Events (Left Column) -->
+                <h2>Upcoming Events:</h2>
+                <br />
+                <h4> Wicked </h4>
+                <img src="~/Content/images/ProductionPhotos/Wicked/02.jpg" height="400" ; />
+                <img src="~/Content/images/ProductionPhotos/Wicked/04.jpg" height="400" ; />
+                <br />
+                <br />
+
+                <h4> Hamilton </h4>
+                <img src="~/Content/images/ProductionPhotos/Hamilton/02.jpg" height="400" ; />
+                <img src="~/Content/images/ProductionPhotos/Hamilton/05.jpg" height="400" width="475" ; />
+
+                <!-- Land Acknowledgement  -->
+                <h2 class="Home-Index-SpotlightText" style="font-family:Oswald"> LAND ACKNOWLEDGEMENT </h2>
+                <p class="Home-Index-ParagraphText">
+                    Theatre Vertigo humbly acknowledges we live and work on the unceded, traditional
+                    tribal lands of the Multnomah, Wasco, Clackamas, Chinook bands, Kathlamet, Tualatin
+                    Kalapuya, Cowlitz, Mollala, Cascades, Oregon City Tumwater, Confederate Tribes of
+                    the Grand Ronde and other indignenous peoples. <br>
+                    <br>
+                    We are on stolen land.<br>
+                    <br>
+                    Theatre Vertigo has been and continues to examine our community relationships to
+                    ensure our collaborators, partners and sponsors support our regions Indigenous
+                    Nations and communities.<br>
+                    <br>
+                    One of the ways Theatre Vertigo is working to act on our commitment to being of
+                    service to the lands that we now share is to build bridges between our arts
+                    community and local Nations.
+                </p>
+            </div>
+            <div class="col-sm-3">
+                <!-- Right Column  Donations / Sponsors / Naya Image-->
+                <center>
+                    <!-- Donations-->
+                    <h2 class="Home-Index-SpotlightText" style="font-family:Oswald"> DONATIONS </h2>
+                    <form action="~/Home/Index"> <!-- Change to future donation link -->
+                        <input class="Home-Index-DonationButton" type="submit" value="Click to Support" />
+                    </form>
+                </center>
+                <div>
+                    <center>
+                        <!-- Sponsors -->
+                        <h2 class="Home-Index-SpotlightText" style="font-family:Oswald"> SPONSORS</h2>
+                    </center>
+                    <img class="Home-Index-SponsorImg" src="~/Content/images/Sponsors/Ellyn-Bye-Logo.png" />
+                    <img class="Home-Index-SponsorImg" src="~/Content/images/Sponsors/LogoRoundColor.png" />
+                    <img class="Home-Index-SponsorImg" src="~/Content/images/Sponsors/OCF-logo-in-white-with-tagline-lg.png" />
+                    <img class="Home-Index-SponsorImg" src="~/Content/images/Sponsors/RACC.png" />
+                    <img class="Home-Index-SponsorImg" src="~/Content/images/Sponsors/Ninkasi-white-text.png" />
+                </div>
+                <!-- NayaImage -->
+                <div class="Home-Index-NayaImage">
+                    <a href="https://nayapdx.org/">
+                        <img src="~/Content/images/NAYAFamilyCenter.jpg" />
+                    </a>
+                    <p>
+                        Click to visit the NAYA Family Center to learn more about supporting our
+                        local indigenous communities.
+                    </p>
+                </div>
+            </div>
+            <!-- Not sure if this is wanting to be kept, if so remove 1 @@ from class and html.actionlink for-->
+            <!-- <p class="text-xl-center">@@Html.ActionLink("About Theatre Vertigo", "About", new { }, new { @@class = "CMS-text-bigger" })</p> -->
+        </div>
+    </div>
+</body>

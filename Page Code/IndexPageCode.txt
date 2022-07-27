@@ -1,0 +1,51 @@
+@model IEnumerable<TheatreCMS3.Areas.Prod.Models.ProdPhoto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var GroupByProduction = Model.GroupBy(model => model.Production);
+}
+
+<div class="ProdPhotos-Index-HeaderDiv">
+    <p>
+        <h2 class="ProdPhotos-Index-HeaderText">Index of Productions</h2>
+        <center>
+            <button class="btn-default">@Html.ActionLink("Create New Production", "Create")</button>
+        </center>
+
+    </p>
+</div>
+
+
+    @foreach (var group in GroupByProduction)
+            {
+                <h2 class="ProdPhotos-Index-HeaderText">@group.Key</h2>
+
+                <div class="card-deck ProdPhotos-Index-CardDeck">
+                    @foreach (var production in group) // Iterates through each production in the group
+                    {
+
+                        string text = ""; // Displays image
+                        if (production.PhotoFile != null)
+                        {
+                            text = @Convert.ToBase64String(production.PhotoFile); // Converts the image stored in the database
+                        }
+                    <div class="col-3">
+                        <div class="card ProdPhotos-Index-Card">
+                            <a href="@Url.Action("Details", new { id = production.ProPhotoId })">
+                                <img src="data:image/jpg;base64,@(Convert.ToBase64String(production.PhotoFile))" style="height: 300px; width: 100%; margin-bottom: 10px;" />
+                            </a>
+
+                            <div class="card-body">
+                                <center>
+                                    <h4 class="card-title ProdPhotos-Index-CardTitleText">@Html.DisplayFor(modelItem => production.Title)</h4>
+                                    <p class="card-text ProdPhotos-Index-CardBodyText">@Html.DisplayFor(modelItem => production.Description)</p>
+                                    <button class="badge badge-pill badge-danger ProdPhotos-Index-BtnHover">@Html.ActionLink("Edit", "Edit", new { id = production.ProPhotoId })</button>
+                                    <button class="badge badge-pill badge-danger ProdPhotos-Index-BtnHover">@Html.ActionLink("Delete", "Delete", new { id = production.ProPhotoId })</button>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            }

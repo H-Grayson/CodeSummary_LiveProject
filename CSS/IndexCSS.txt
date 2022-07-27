@@ -1,0 +1,37 @@
+/* Index Page Css */
+.ProdPhotos-Index-Card {
+    margin: 20px 20px 20px 20px;
+    align-content: center;
+}
+
+.ProdPhotos-Index-Row {
+    width: 100%;
+}
+
+.ProdPhotos-Index-HeaderText {
+    text-align: center;
+}
+
+.ProdPhotos-Index-HeaderDiv {
+    background-color: var(--secondary-color);
+}
+
+.ProdPhotos-Index-CardTitleText {
+    align-content: center;
+    color: var(--dark-color)
+}
+
+.ProdPhotos-Index-CardBodyText {
+    align-content: center;
+    color: var(--dark-color)
+}
+
+.ProdPhotos-Index-BtnHover:hover {
+    background-color: rgba(0,0,0, 0.6);
+}
+
+.ProdPhotos-Index-CardDeck {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-color);
+}
