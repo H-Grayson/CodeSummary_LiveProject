@@ -1,4 +1,4 @@
-# C# Live Project
+# C#/.NET Live Project
 
 ## Introduction
 During a two-week internship at Prosper IT Consulting, I worked on a team with other software development students to create an ASP.NET MVC web application using Entity Framework for data access. The web application was designed for a theater company to manage its website without requiring any technical knowledge. The application has multiple areas to manage admin needs, subscriber needs, and general public needs. The site includes information on the current season, past productions, and the current cast members. Below are descriptions of the stories I worked on along with code snippets.
